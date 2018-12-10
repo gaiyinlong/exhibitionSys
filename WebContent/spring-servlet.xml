@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+        
+     <!-- 和MVC相关的配置 -->   
+        
+        
+	<!-- 启动注解模式 -->
+	<context:annotation-config/>
+	
+	<!-- 配置扫描的包 -->
+    <context:component-scan base-package="com.igeekhome.question.controller"/>
+    
+	<!-- 使用ajax时，必须配置，默认配置了spring的中内容转换器  -->
+	<!-- 内容转换器使用来转换请求数据的格式 -->
+	<mvc:annotation-driven />
+	
+	<!-- 拦截器配置 -->
+	<mvc:interceptors>
+		<!-- 配置一个单独的拦截器，拦截所有的请求 
+		<bean class="com.igeekhome.question.interceptors.AllRequestInterceptor"/>
+		-->
+		<!-- 配置一个或者多个拦截，拦截指定的URL -->
+		<mvc:interceptor>
+			<mvc:mapping path="/question/loadNew.htmls"/>
+			<bean class="com.igeekhome.question.interceptors.QuestionInterceptor"/>
+		</mvc:interceptor>
+	</mvc:interceptors>
+</beans>

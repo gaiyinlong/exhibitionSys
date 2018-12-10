@@ -1,0 +1,3049 @@
+@charset "utf-8";
+/* CSS Document */
+/*---------公用部分-------------*/
+html, body, div, p, ul, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, form,
+	input, select, button, textarea, iframe, table, th, td {
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	border: 0 none;
+	vertical-align: top;
+	display: inline-block; /* 解决图片在ie6中产生图片底部的3像素空白bug */
+	-ms-interpolation-mode: bicubic; /* 解决图像缩放而产生的锯齿IE7+ */
+	image-rendering: optimizeQuality; /* 解决图像缩放而产生的锯齿Firefox 3.6 */
+}
+
+button {
+	cursor: pointer;
+	border: 0 none;
+}
+
+input, textarea {
+	resize: none;
+	border: 0 none;
+	background: none;
+	outline: none;
+}
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+	color: #aaa;
+} /*placeholder样式*/
+.placeholder {
+	color: #aaa;
+}
+
+ul, li {
+	list-style-type: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+i, em, cite {
+	font-style: normal;
+}
+
+.fixed:after {
+	clear: both;
+	content: '.';
+	display: block;
+	font-size: 0;
+	line-height: 0;
+	visibility: hidden;
+	height: 0;
+}
+
+.fixed {
+	zoom: 1;
+}
+
+.clear {
+	diplay: block !important;
+	float: none !important;
+	clear: both;
+	overflow: hidden;
+	width: auto !important;
+	height: 0 !important;
+	margin: 0 auto !important;
+	padding: 0 !important;
+	font-size: 0;
+	line-height: 0;
+}
+
+body, input, select, button, textarea {
+	font-family: "Microsoft YaHei", "微软雅黑", "黑体", "Adobe 黑体 Std", helvetica,
+		arial, verdana, tahoma, sans-serif;
+	font-weight: normal;
+	font-size: 12px;
+}
+
+body {
+	color: #333;
+	word-break: break-all;
+	word-break: break-all;
+}
+/**background:url(../images/leader_bg.jpg) repeat;*/
+a {
+	text-decoration: none;
+}
+
+a:focus {
+	outline: none;
+}
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+.loading {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+	background: url("o3.gif")
+		/*tpa=http://act.lafumei.com/resource/system/admin/images/o3.gif*/ 
+		no-repeat center center rgba(255, 255, 255, 0.5);
+}
+/*header*/
+#header {
+	position: relative;
+	width: 100%;
+	background: #b60927;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+	height: 120px;
+	overflow: hidden;
+}
+
+.logo {
+	float: left;
+	display: block;
+	background: #313131;
+	width: 540px;
+	margin-left: 36px;
+	display: inline;
+}
+
+.logo img {
+	margin: 35px 0 0 58px;
+}
+
+.logo_index {
+	float: left;
+	display: block;
+	background: #b60927;
+	width: 540px;
+}
+
+.logo_index img {
+	margin: 15px 0 0 0;
+}
+
+.user {
+	position: absolute;
+	bottom: 10px;
+	right: 2%;
+}
+
+.user li {
+	float: left;
+	padding: 0 10px;
+}
+
+.user a {
+	font-size: 14px;
+	color: #bbb;
+}
+
+.user a:hover {
+	color: #2489CE;
+}
+
+.user a i {
+	margin: 0 5px 0 0;
+}
+/*menu*/
+.leftBox .menu {
+	position: inherit;
+	border: 0 none;
+	padding: 0;
+	margin: 0;
+}
+
+.leftBox .menu>li {
+	margin-bottom: 0.5em;
+	overflow: hidden;
+	*width: 100%;
+	*float: left;
+	background: url("no_selecte.png")
+		/*tpa=http://act.lafumei.com/resource/system/admin/images/no_selecte.png*/
+		 30px center no-repeat;
+	border-bottom: 1px solid #dcdcdc;
+}
+
+.leftBox .menu>li:last-child {
+	border: none;
+}
+
+.leftBox .menu>li>h2 a:hover {
+	color: #de7d12;
+}
+
+.leftBox .menu>li.cur h2 {
+	background: url("selete.png")
+		/*tpa=http://act.lafumei.com/resource/system/admin/images/selete.png*/
+		 30px center no-repeat;
+}
+
+.leftBox .menu>li h2 {
+	line-height: 30px;
+	font-size: 20px;
+	height: 30px;
+	overflow: hidden;
+}
+
+.leftBox .menu>li h2 a {
+	padding: 0 20px 0 65px;
+	color: #333;
+	position: relative;
+	height: 30px;
+}
+
+.leftBox .menu>li h2 a:active {
+	background: none;
+}
+
+.leftBox .menu>li h2 a i {
+	left: 10px;
+}
+
+.leftBox .menu a {
+	display: block;
+}
+
+.leftBox .menu li.cur .secMenu {
+	display: block;
+}
+
+.secMenu {
+	display: none;
+}
+
+.secMenu li {
+	line-height: 30px;
+	background: #fafafa;
+}
+
+.secMenu li a {
+	padding: 0 0px 0 70px;
+	font-size: 15px;
+	color: #333;
+	position: relative;
+	display: block;
+	height: 30px;
+}
+
+.secMenu li a i {
+	right: 10px;
+}
+
+.secMenu li a:hover {
+	background: #eeeeee;
+	color: #745D45;
+	border-left: 4px solid #B35C27;
+}
+
+.secMenu li.cur a {
+	background: #eee;
+	color: rgb(172, 119, 5);
+	text-shadow: none;
+}
+
+.secMenu li.cur a i {
+	background: #fff;
+	color: #5F9CC5;
+}
+/*footer*/
+#footer {
+	text-align: center;
+	padding: 40px 0;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	color: #bbb;
+}
+/*leftBox*/
+.leftBox {
+	float: left;
+	width: 200px;
+	padding: 15px 0;
+	background: #fff;
+	border-right: 1px solid #dcdcdc;
+	overflow: hidden;
+}
+/*rightBox*/
+.rightBox {
+	margin-left: 200px;
+	padding: 15px 20px;
+	position: relative;
+}
+
+.warp {
+	min-width: 1200px;
+}
+
+.theCon {
+	background: #fff;
+	border: 1px solid #dcdcdc;
+	box-shadow: 2px 0 5px rgba(6, 6, 6, 0.11);
+}
+
+.conTit {
+	background: #f5f5f5;
+	height: 70px;
+	line-height: 70px;
+	padding: 0;
+}
+
+.conTit .backBtn {
+	line-height: normal;
+}
+
+.conTit .fr {
+	padding-right: 20px;
+}
+
+.conTit p {
+	color: #535353;
+	float: left;
+	font-size: 18px;
+	font-weight: bold;
+	margin: 0 120px 0 20px;
+}
+
+.conTit ul {
+	float: left;
+}
+
+.conTit ul li {
+	display: block;
+	float: left;
+	font-size: 16px;
+}
+
+.conTit ul li a.cur {
+	background: none repeat scroll 0 0 #fff;
+	font-weight: bold;
+}
+
+.conTit ul li a {
+	color: #ffa914;
+	display: block;
+	padding: 0 20px;
+}
+
+.secTit {
+	padding: 20px;
+}
+
+.secTit a {
+	padding: 5px 11px;
+}
+
+.secTit.right {
+	text-align: right;
+}
+
+.secTit.right a {
+	margin: 0 0 0 10px;
+}
+
+.searchBox input {
+	border: 1px solid #dcdcdc;
+	border-radius: 3px;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2) inset;
+	color: #434343;
+	height: 33px;
+	line-height: normal;
+	font-size: 14px;
+	margin-right: 20px;
+	padding-left: 8px;
+}
+
+.dateF {
+	border: 1px #CCC solid;
+	padding: 10px 0 0 12px;
+}
+
+.dateF a.backBtn {
+	margin-top: 5px;
+}
+
+.myInfo {
+	padding: 10px 1%;
+	background: #fff;
+	border-radius: 0.6em;
+	border: 1px solid #E0E0E0;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+	position: relative;
+}
+
+.myInfo ul {
+	width: 70%;
+	float: left;
+}
+
+.myInfo ul li {
+	float: left;
+	width: 50%;
+	*width: 49%;
+	font-size: 16px;
+	margin: 10px 0;
+}
+
+.myInfo ul li a {
+	margin: 0 0 0 10px;
+}
+
+.myInfo .passwordEdit {
+	float: right;
+	position: absolute;
+	right: 1%;
+	bottom: 15px;
+	font-size: 14px;
+	box-shadow: 0 1px 1px rgba(255, 255, 255, 0.5) inset;
+	border-radius: 0.7em;
+	border: 1px solid #044062;
+	text-shadow: 0 1px 0 #194B7E;
+	color: #fff;
+	padding: 0.3em 10px;
+	text-align: center;
+	background: linear-gradient(#5F9CC5, #396B9E) repeat scroll 0 0 #396B9E;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5F9CC5',
+		endColorstr='#396B9E', GradientType='0'); /* IE*/
+}
+
+.myInfo .passwordEdit i {
+	margin: 0 10px 0 0;
+}
+
+.dialogBtn {
+	padding-left: 22%;
+}
+
+.dialogBtn a {
+	width: 25%;
+	display: inline-block;
+	margin: 0 5% 0 0;
+}
+/*table*/
+.theTable {
+	width: 100%;
+}
+
+.theTable tr:hover {
+	background: #eee;
+}
+
+.theTable tr td, .theTable tr th {
+	font-size: 14px;
+	text-align: center;
+}
+
+.theTable tr th {
+	padding: 15px 0;
+	background: #e6e6e6;
+}
+
+.theTable tr td {
+	border-bottom: 1px solid #eee;
+	padding: 10px 0;
+}
+
+.theTable tr td a {
+	color: #333;
+}
+
+.theTable tr td a p {
+	color: #666;
+	font-size: 12px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 110px;
+}
+
+.theTable img {
+	vertical-align: middle;
+}
+
+.caozuo a {
+	display: inline-block;
+	margin: 0 10px;
+	font-weight: normal;
+	color: #888;
+}
+
+.caozuo a:hover {
+	color: #de7d12;
+}
+
+.theTable tr table td {
+	border-bottom: 1px solid #eee;
+	padding: 10px 0;
+}
+/*proTable*/
+.proTable {
+	width: 100%;
+}
+
+.proTable tr th {
+	padding: 15px 0;
+	background: #e6e6e6;
+	text-align: center;
+}
+
+.proTable02 tr td {
+	font-size: 14px;
+	text-align: center;
+	border-bottom: none;
+}
+
+.proTable02 tr td table tr td {
+	padding: 10px 0;
+	border-bottom: 1px solid #eee;
+}
+
+.proTable02 tr td table a {
+	color: #333;
+}
+
+.proTable02 tr td table a p {
+	color: #666;
+	font-size: 12px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 110px;
+}
+
+.proTable02 {
+	width: 100%;
+}
+
+/*input/textarea*/
+.inputArea {
+	margin: 1em 0;
+	width: 100%;
+}
+
+.inputArea label {
+	width: 17%;
+	margin: 10px 2% 0 2%;
+	display: inline-block;
+	font-size: 14px;
+	line-height: 1.4em;
+	vertical-align: top;
+	*float: left;
+}
+
+.inputArea .inputLine {
+	width: 60%;
+	display: inline-block;
+	border: 1px solid #aaa;
+	background-clip: padding-box;
+	border-radius: 3px;
+	padding: 10px;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2) inset;
+	position: relative;
+	*float: left;
+	*width: 77%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.inputArea .inputLine button {
+	position: absolute;
+	right: 3px;
+	top: 5px;
+	*width: 30px;
+	background: none;
+}
+
+.inputArea .inputLine button i {
+	font-size: 20px;
+	display: block;
+	color: #aaa;
+}
+
+.inputArea .inputLine input {
+	font-size: 14px;
+	line-height: normal;
+	width: 100%;
+}
+
+.inputArea .inputLine textarea {
+	font-size: 14px;
+	line-height: 1.4em;
+	width: 100%;
+}
+
+.inputArea .inputLine select {
+	width: 100%;
+	background: none;
+	border: none;
+	outline: none;
+}
+/*radio*/
+.radio {
+	margin: 20px 0;
+}
+
+.radio li.radio_cur {
+	color: #535353;
+	font-size: 16px;
+	background: url("radio_cur.png")
+		/*tpa=http://act.lafumei.com/resource/system/admin/images/radio_cur.png*/
+		 left center no-repeat;
+}
+
+.radio li.radio_cur input {
+	margin-right: 12px;
+	opacity: 0;
+}
+
+.radio li {
+	color: #535353;
+	font-size: 16px;
+	background: url("radio.png")
+		/*tpa=http://act.lafumei.com/resource/system/admin/images/radio.png*/
+		 left center no-repeat;
+	float: left;
+	margin-right: 76px;
+}
+
+.radio li input {
+	margin-right: 12px;
+	opacity: 0;
+}
+/*checkbox*/
+.checkbox {
+	margin: 20px 0;
+}
+
+.checkbox li.check_cur {
+	color: #535353;
+	font-size: 16px;
+	background: url("checked.png")
+		/*tpa=http://act.lafumei.com/resource/system/admin/images/checked.png*/
+		 left center no-repeat;
+}
+
+.checkbox li.check_cur input {
+	margin-right: 12px;
+	opacity: 0;
+}
+
+.checkbox li {
+	color: #535353;
+	font-size: 16px;
+	background: url("check.png")
+		/*tpa=http://act.lafumei.com/resource/system/admin/images/check.png*/
+		 left center no-repeat;
+	float: left;
+	margin-right: 76px;
+}
+
+.checkbox li input {
+	margin-right: 12px;
+	opacity: 0;
+}
+/*btns*/
+.delateBtn {
+	background: #DE7D12;
+	border: 1px solid #A77336;
+	color: #fff;
+	font-size: 13px;
+	padding: 2px 10px;
+	border-radius: 3px;
+	display: inline-block;
+	cursor: pointer;
+	line-height: normal;
+	color: #fff !important;
+}
+
+.addBtn, .backBtn, .saveBtn {
+	background: #A19797;
+	border: 1px solid #8F8273;
+	color: #fff;
+	font-size: 13px;
+	padding: 2px 10px;
+	border-radius: 3px;
+	display: inline-block;
+	cursor: pointer;
+	line-height: normal;
+	color: #fff !important;
+}
+
+.greyBtn {
+	background: #888888;
+	border: 1px solid #777777;
+	color: #fff;
+	font-size: 13px;
+	padding: 2px 10px;
+	border-radius: 3px;
+	margin-right: 10px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.theTable td a.backBtn, .theTable td a.addBtn, .theTable td a.saveBtn,
+	.theTable td a.delateBtn {
+	margin: 0 5px;
+}
+
+.delateBtn:hover {
+	background: #ffa914;
+}
+
+.addBtn:hover {
+	background: #ffa914;;
+}
+
+.backBtn:hover {
+	background: #ffa914;;
+}
+
+.saveBtn:hover {
+	background: #ffa914;;
+}
+
+.addBtn02 {
+	background: #666666;
+	border: 1px solid #999;
+	color: #fff;
+	font-size: 13px;
+	padding: 2px 10px;
+	border-radius: 3px;
+	display: inline-block;
+	cursor: pointer;
+	line-height: normal;
+	color: #fff !important;
+}
+/*select*/
+.selectBox {
+	background: #ffffff;
+	border: 1px solid #dcdcdc;
+	box-shadow: inset 0px 0 8px rgba(6, 6, 6, 0.18);
+	width: 104px;
+	height: 26px;
+	padding: 3px 4px 3px 12px;
+	margin-top: 22px;
+	border-radius: 2px;
+	position: relative;
+}
+
+.selectBox input {
+	width: 100px;
+	height: 26px;
+	color: #535353;
+	font-size: 16px;
+	background: #ffffff url("arrow.png")
+		/*tpa=http://act.lafumei.com/resource/system/admin/images/arrow.png*/
+		 right center no-repeat;
+}
+
+.dropDown {
+	position: absolute;
+	top: 34px;
+	width: 100%;
+	left: 0;
+	display: none;
+}
+
+.dropDown ul {
+	background: #ccc;
+	overflow: hidden;
+	padding: 5px 0;
+}
+
+.dropDown ul li {
+	color: #666;
+	font-size: 14px;
+	text-align: center;
+	line-height: 22px;
+	cursor: pointer;
+}
+/*listview*/
+.listviewA {
+	border-top: 1px solid #CCCCCC;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+	margin: 0 0 15px 0;
+}
+
+.listviewA li {
+	padding: 0.7em 15px;
+	border-bottom: 1px solid #CCCCCC;
+	background: #eee;
+}
+
+.listviewB {
+	border-radius: 0.6em;
+	overflow: hidden;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+	border: 1px solid #bbb;
+	font-size: 14px;
+	font-weight: 700;
+	margin: 0 0 15px 0;
+}
+
+.listviewB li {
+	padding: 0.7em 15px;
+	border-top: 1px solid #bbb;
+	background: linear-gradient(#FFFFFF, #F1F1F1) repeat scroll 0 0 #EEEEEE;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF',
+		endColorstr='#F1F1F1', GradientType='0'); /* IE*/
+}
+
+.listviewB li:first-child {
+	border: 0 none;
+}
+
+.listviewB li.liTit, .listviewB li.liTit:hover {
+	background: linear-gradient(#DDDDDD, #BBBBBB) repeat scroll 0 0 #BBBBBB;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#DDDDDD',
+		endColorstr='#BBBBBB', GradientType='0'); /* IE*/
+	*background-color: #BBBBBB;
+}
+
+.listviewB li a {
+	display: block;
+}
+
+.listviewB li:hover {
+	background: linear-gradient(#f6f6f6, #e0e0e0) repeat scroll 0 0 #dfdfdf;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6',
+		endColorstr='#e0e0e0', GradientType='0'); /* IE*/
+}
+
+.listviewC {
+	border: 1px solid #bbb;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+	border-radius: 0.6em;
+	overflow: hidden;
+	margin: 0 0 15px 0;
+}
+
+.listviewC li {
+	border-top: 1px solid #bbb;
+	background: linear-gradient(#FFFFFF, #F1F1F1) repeat scroll 0 0 #EEEEEE;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF',
+		endColorstr='#F1F1F1', GradientType='0'); /* IE*/
+}
+
+.listviewC li:hover {
+	background: linear-gradient(#f6f6f6, #e0e0e0) repeat scroll 0 0 #dfdfdf;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6',
+		endColorstr='#e0e0e0', GradientType='0'); /* IE*/
+}
+
+.listviewC li:first-child {
+	border: 0 none;
+}
+
+.listviewC li a {
+	display: block;
+	padding: 0.7em 40px;
+	position: relative;
+}
+
+.listviewC li a img {
+	position: absolute;
+	left: 10px;
+	top: 0.9em;
+}
+
+.listviewD {
+	border: 1px solid #bbb;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+	border-radius: 0.6em;
+	overflow: hidden;
+	margin: 0 0 15px 0;
+}
+
+.listviewD li {
+	border-top: 1px solid #bbb;
+	background: linear-gradient(#FFFFFF, #F1F1F1) repeat scroll 0 0 #EEEEEE;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF',
+		endColorstr='#F1F1F1', GradientType='0'); /* IE*/
+}
+
+.listviewD li:first-child {
+	border: 0 none;
+}
+
+.listviewD li a {
+	display: block;
+	padding: 0.7em 40px 0.7em 100px;
+	position: relative;
+	border: 1px solid #fff;
+	border-radius: 0.6em 0 0 0.6em;
+	overflow: hidden;
+}
+
+.listviewD li a img {
+	max-width: 80px;
+	max-height: 80px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.listviewD li a h2 {
+	display: block;
+	font-size: 16px;
+	font-weight: 700;
+	margin: 0.6em 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.listviewD li a p {
+	display: block;
+	font-size: 12px;
+	font-weight: 400;
+	margin: -0.5em 0 0.6em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+/*login/register*/
+.login {
+	width: 540px;
+	margin: 0 auto;
+	padding-bottom: 20px;
+	background: #fff;
+	overflow: hidden;
+	border: 1px solid #CCCCCC;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.login .inputArea {
+	width: 65%;
+	margin: 1em auto;
+}
+
+.login .inputArea label {
+	width: 18%;
+}
+
+.loginBox {
+	margin: 20px 0 0;
+}
+
+.loginBox ul {
+	text-align: center;
+	width: 100%;
+	border-bottom: 1px solid #bbb;
+	overflow: hidden;
+	margin: 20px 0;
+	*padding: 0 0 0 150px;
+}
+
+.loginBox li {
+	display: inline-block;
+	padding: 10px 15px;
+	margin: 0 5px -5px;
+	border-radius: 5px 5px 0 0;
+	overflow: hidden;
+	border: 1px solid #eee;
+	font-size: 14px;
+	cursor: pointer;
+	*width: 70px;
+	*float: left;
+	background: linear-gradient(#FAFAFA, #F6F6F6) repeat scroll 0 0 #FFFFFF;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FAFAFA',
+		endColorstr='#F6F6F6', GradientType='0'); /* IE*/
+}
+
+.loginBox li.cur {
+	border: 1px solid #044062;
+	text-shadow: 0 1px 0 #194B7E;
+	color: #fff;
+	background: linear-gradient(#5F9CC5, #396B9E) repeat scroll 0 0 #396B9E;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5F9CC5',
+		endColorstr='#396B9E', GradientType='0'); /* IE*/
+}
+
+.login .inputArea .inputLine {
+	width: 76%;
+}
+
+.save {
+	text-align: center;
+	padding: 20px 0;
+}
+
+.save a {
+	margin: 0 5px 0;
+	padding: 5px 15px;
+}
+
+.save a i {
+	margin: 0 10px 0 0;
+	font-size: 13px;
+}
+
+.register.login .inputArea {
+	width: 70%;
+}
+
+.register.login .inputArea label {
+	width: 22%;
+}
+
+.register.login .inputArea .inputLine {
+	width: 74%;
+	*width: 72%;
+}
+/*dialog*/
+.dialog {
+	width: 500px;
+	z-index: 99;
+	position: absolute;
+	left: 50%;
+	margin-left: -250px;
+	background: #fff;
+	border-radius: 1em;
+	overflow: hidden;
+	border: 1px solid #CCCCCC;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.dialog .tit {
+	padding: 1em 0;
+	text-align: center;
+	background: linear-gradient(#F0F0F0, #DDDDDD) repeat scroll 0 0 #EEEEEE;
+	position: relative;
+	font-size: 13px;
+	color: #666;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F0F0F0',
+		endColorstr='#DDDDDD', GradientType='0'); /* IE*/
+}
+
+.dialog .tit i {
+	position: absolute;
+	right: 10px;
+	top: 12px;
+	font-size: 18px;
+	cursor: pointer;
+	color: #aaa;
+	transition: all 0.3s ease-in-out;
+}
+
+.dialog .tit i:hover {
+	color: #cc0000;
+}
+
+.dialog .con {
+	padding: 5px 20px 20px;
+	background: linear-gradient(#F9F9F9, #EEEEEE) repeat scroll 0 0 #F9F9F9;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F9F9F9',
+		endColorstr='#EEEEEE', GradientType='0'); /* IE*/
+}
+
+.dialog .inputArea label {
+	width: 27%;
+}
+
+.dialog .inputArea .inputLine {
+	width: 68%;
+}
+
+.blackBg {
+	background: #000;
+	opacity: 0.5;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 98;
+	width: 100%;
+	height: 100%;
+}
+/*pages*/
+.pages {
+	width: 100%;
+	text-align: center;
+	padding: 30px 0;
+}
+
+.pages a {
+	display: inline-block;
+	padding: 5px 8px;
+	margin: 0 3px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+	border-radius: 3px;
+	border: 1px solid #ccc;
+	color: #251606;
+	background: #fff;
+}
+
+.pages a:hover, .pages a.cur {
+	border: 1px solid #CCC6BD;
+	color: #fff;
+	background: #BBB4AB;
+}
+/* 上传按钮样式*/
+.inputArea02 label {
+	width: 17%;
+	margin: 10px 2% 0;
+	display: inline-block;
+	font-size: 14px;
+	line-height: 1.4em;
+	vertical-align: top;
+	*float: left;
+}
+
+.inputArea02 .inputLine {
+	width: 100px;
+	min-height: 36px;
+	line-height: 36px;
+	padding: 0 0.4em;
+	display: inline-block;
+	background-clip: padding-box;
+	border-radius: 3px;
+	text-align: center;
+	position: relative;
+	*float: left;
+	*width: 77%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	background: #de7d12;
+	color: #fff;
+	font-size: 14px;
+	vertical-align: top;
+}
+
+.inputArea02 .inputLine button {
+	position: absolute;
+	right: 3px;
+	top: 5px;
+	*width: 30px;
+	background: none;
+}
+
+.inputArea02 .inputLine button i {
+	font-size: 20px;
+	display: block;
+	color: #aaa;
+}
+
+.inputArea02 .inputLine input {
+	font-size: 14px;
+	line-height: 1.4em;
+	width: 100%;
+	padding: 0.4em 0;
+	height: 24px;
+	left: 0;
+	filter: alpha(opacity = 0);
+	-moz-opacity: 0;
+	-khtml-opacity: 0;
+	opacity: 0;
+	position: absolute;
+}
+
+.inputArea02 .inputLine textarea {
+	font-size: 14px;
+	line-height: 1.4em;
+	width: 100%;
+	padding: 0.4em 0;
+}
+
+.inputArea02 .inputLine select {
+	width: 100%;
+	background: none;
+	border: none;
+	padding: 0.4em 0;
+	outline: none;
+}
+
+#thumb img {
+	margin-left: 0px;
+}
+
+.query_select {
+	padding-bottom: 5px;
+}
+
+;
+.employ {
+	padding: 11px 8px 0;
+	overflow: hidden;
+	min-height: 300px;
+}
+/*国家/地区*/
+.employ>ul>li {
+	float: left;
+	margin-right: 10px;
+	position: relative;
+}
+
+.employ>ul>li>h1 {
+	color: #5f5f5f;
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+
+.selectBox {
+	background: #f6f6f6;
+	border-radius: 3px;
+	border: 1px solid #cbcbcb;
+	height: 34px;
+	line-height: 34px;
+	position: relative;
+}
+
+.selectBox input {
+	height: 34px;
+	padding-left: 5px;
+	display: block;
+	background: #f6f6f6 url("select.png")
+		/*tpa=http://act.lafumei.com/resource/system/admin/images/select.png*/
+		 right center no-repeat;
+	background-size: 35px 35px;
+	color: #c4c4c4;
+	cursor: pointer;
+}
+/*下拉*/
+.dropDown {
+	background: #eee;
+	position: absolute;
+	top: 35px;
+	height: 100px;
+	width: 100%;
+	display: none;
+}
+
+.dropDown ul li {
+	text-indent: 10px;
+	color: #666;
+	cursor: pointer;
+}
+/*添加产品*/
+#pro {
+	clear: both;
+	height: 28px;
+}
+
+#pro .curp {
+	background: #cbcbcb;
+}
+
+#pro1 {
+	width: 49%;
+	height: 28px;
+	float: left;
+	color: #333333;
+	background: url("sucaikuIco.png")
+		/*tpa=http://act.lafumei.com/resource/old/css/img/sucaikuIco.png*/ 
+		no-repeat scroll 80% center #E5E5E5;
+}
+
+#gy {
+	width: 49%;
+	height: 28px;
+	float: right;
+	color: #333333;
+	background: url("sucaikuIco.png")
+		/*tpa=http://act.lafumei.com/resource/old/css/img/sucaikuIco.png*/ 
+		no-repeat scroll 80% center #E5E5E5;
+}
+
+#area {
+	background: #cbcbcb;
+	margin-top: 3px;
+}
+
+#area input {
+	margin: 5px 10px;
+	background: #fff;
+	padding: 5px;
+	color: #333333;
+	cursor: pointer;
+}
+
+#area input:hover {
+	background: #E5E5E5;
+}
+
+#area input.curs {
+	background: #E5E5E5;
+}
+
+#choose {
+	padding-top: 6px;
+}
+
+#choose input {
+	margin: 10px 8px;
+	color: #fff;
+}
+
+/************一号营电商平台管理系统样式整合调整添加************/
+.leaderBox {
+	font-size: 14px;
+}
+
+.leaderBox span {
+	margin: 0 6px;
+}
+
+.leaderBox select {
+	border: 1px solid #ccc;
+	color: #333;
+	margin-left: 12px;
+	font-size: 14px;
+}
+
+.message_ul {
+	padding: 20px;
+	height: 10px;
+}
+
+.message_ul li {
+	float: left;
+	display: block;
+	margin-right: 25px;
+}
+
+.message_ul li a {
+	display: block;
+	font-size: 16px;
+	color: #6d6d6d;
+	padding: 0 10px;
+	height: 30px;
+	background: #fff;
+	border: 1px solid #e6e6e6;
+	text-align: center;
+	line-height: 30px;
+}
+
+.message_ul li a.cur {
+	background: #f58d16;
+	color: #fff;
+}
+
+.clearfix:after {
+	clear: both;
+	visibility: hidden;
+	content: ".";
+	font-size: 0;
+	height: 0;
+	display: block;
+}
+/*leader*/
+.user_leader {
+	float: right;
+	margin-top: 38px;
+}
+
+.user_leader li {
+	display: block;
+	float: left;
+}
+
+.user_leader li a {
+	display: block;
+	width: 100px;
+	padding-left: 20px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 16px;
+	margin-right: 24px;
+	border-radius: 3px;
+	border: 1px solid #a10c26;
+	background: #434343;
+	color: #fff;
+}
+
+.user_leader li a.usename {
+	border: none;
+	background: url("user.png")
+		/*tpa=http://act.lafumei.com/resource/system/admin/images/user.png*/ 
+		left center no-repeat;
+	margin-right: 100px;
+}
+
+.user_leader li a.edit {
+	background: #b60927 url("Padlock_Open.png")
+		/*tpa=http://act.lafumei.com/resource/system/admin/images/Padlock_Open.png*/
+		 16px center no-repeat;
+}
+
+.user_leader li a.exit {
+	background: #b60927 url("Power.png")
+		/*tpa=http://act.lafumei.com/resource/system/admin/images/Power.png*/
+		 26px center no-repeat;
+}
+
+.BtnA {
+	margin-top: 30px;
+	display: inline-block;
+	box-shadow: 0 1px 1px rgba(255, 255, 255, 0.5) inset;
+	border-radius: 0.5em;
+	border: 1px solid #ab6500;
+	color: #fff;
+	font-size: 16px;
+	padding: 0.4em 25px;
+	text-align: center;
+	overflow: hidden;
+	background: #de7d12;
+}
+
+.BtnB {
+	margin-top: 30px;
+	display: inline-block;
+	border-radius: 0.5em;
+	border: 1px solid #ab6500;
+	color: #fff;
+	font-size: 16px;
+	padding: 0.4em 25px;
+	text-align: center;
+	overflow: hidden;
+	background: #de7d12;
+}
+/*个人中心*/
+.singalCenter {
+	background: #fff;
+	padding-bottom: 20px;
+}
+
+.ads img {
+	box-shadow: 0 2px 5px rgba(6, 6, 6, 0.11);
+	height: 150px;
+	overflow: hidden;
+}
+
+.singal {
+	margin-top: 20px;
+	border: 1px solid #dcdcdc;
+	box-shadow: 2px 0 5px rgba(6, 6, 6, 0.11);
+}
+
+.singal_tit {
+	height: 70px;
+	background: #f5f5f5;
+	line-height: 70px;
+}
+
+.singal_tit p {
+	float: left;
+	margin-right: 134px;
+	font-size: 18px;
+	font-weight: bold;
+	color: #535353;
+	margin-left: 38px;
+}
+
+.singal_tit ul {
+	float: left;
+}
+
+.singal_tit ul li {
+	font-size: 16px;
+	display: block;
+	float: left;
+	padding: 0 45px;
+}
+
+.singal_tit ul li a {
+	display: block;
+	color: #ffa914;
+}
+
+.singal_tit ul li.cur {
+	font-weight: bold;
+	background: #fff;
+}
+
+.score {
+	height: 67px;
+	background: #fff;
+	border-bottom: 1px solid #cfcfcf;
+}
+
+.score ul li {
+	color: #707070;
+	font-size: 16px;
+	font-weight: bold;
+	display: block;
+	float: left;
+	margin: 0 40px;
+	display: inline;
+	margin-top: 30px;
+}
+
+.score ul li.cur {
+	border-bottom: 3px solid #ffa914;
+	padding-bottom: 12px;
+}
+
+.exchange {
+	height: 58px;
+	line-height: 58px;
+	background: #f5f5f5;
+	color: #707070;
+	font-size: 16px;
+	padding-left: 40px;
+}
+
+.exchange span {
+	color: #de7d12;
+	font-size: 24px;
+	margin-right: 20px;
+}
+
+.rule {
+	padding: 30px 33px 28px 38px;
+	font-size: 18px;
+	color: #707070;
+}
+
+.rule h1 {
+	font-size: 16px;
+	font-weight: normal;
+	margin-bottom: 16px;
+}
+
+.nums input {
+	border-radius: 3px;
+	width: 120px;
+	height: 40px;
+	border: 1px solid #dcdcdc;
+	box-shadow: inset 2px 0 8px rgba(6, 6, 6, 0.1);
+	text-align: center;
+	font-size: 24px;
+	color: #de7d12;
+	margin-right: 16px;
+}
+
+.nums span {
+	margin: 0 54px;
+}
+
+.exchange_btn {
+	display: inline-block;
+	background: #de7d12;
+	border: 1px solid #ab6500;
+	color: #fff;
+	font-size: 20px;
+	padding: 5px 45px;
+	border-radius: 3px;
+	margin-left: 45px;
+}
+
+.rule h2 {
+	font-size: 18px;
+	color: #de7d12;
+	font-weight: normal;
+	margin-top: 67px;
+	border-bottom: 1px solid #de7d12;
+	padding-bottom: 16px;
+}
+
+.rule p {
+	font-size: 14px;
+	color: #707070;
+	text-indent: 2em;
+	line-height: 26px;
+}
+/*户外购*/
+.go {
+	border: 1px solid #dcdcdc;
+	box-shadow: 2px 0 5px rgba(6, 6, 6, 0.11);
+	background: #f5f5f5;
+}
+
+.position {
+	height: 67px;
+	line-height: 67px;
+	background: #fff;
+	border-bottom: 1px solid #cfcfcf;
+}
+
+.position p {
+	float: left;
+	padding-left: 34px;
+	font-size: 14px;
+	color: #707070;
+}
+
+.position p a {
+	color: #ffa914;
+}
+
+.back {
+	float: right;
+	display: block;
+	margin-right: 32px;
+	background: #de7d12;
+	border: 1px solid #a77336;
+	font-size: 16px;
+	color: #fff;
+	width: 80px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	border-radius: 3px;
+	margin-top: 18px;
+}
+
+.type_tit {
+	background: #f5f5f5;
+	color: #707070;
+	font-size: 16px;
+	margin-left: 32px;
+	margin-top: 12px;
+	font-weight: bold;
+	padding-bottom: 12px;
+}
+
+.type_tit a {
+	font-weight: normal;
+	display: inline-block;
+	border: 1px solid #dcdcdc;
+	background: #fff;
+	color: #707070;
+	font-size: 16px;
+	padding: 0 5px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	margin: 0 8px;
+}
+
+.type_tit a.cur {
+	background: #de7d12;
+	color: #fff;
+}
+
+.type_tit_search {
+	width: 202px;
+	height: 42px;
+	font-size: 16px;
+	margin-top: 8px;
+	position: relative;
+	margin-left: 32px;
+	padding-bottom: 12px;
+}
+
+.type_tit_search input {
+	box-shadow: 2px 0 8px rgba(6, 6, 6, 0.1) inset;
+	height: 40px;
+	line-height: 40px;
+	color: #707070;
+	font-size: 16px;
+	width: 158px;
+	border-radius: 3px;
+	text-indent: 18px;
+	position: absolute;
+	left: 0;
+	border: 1px solid #dcdcdc;
+}
+
+.goBtn {
+	background: #de7d12 url("glass.png")
+		/*tpa=http://act.lafumei.com/resource/system/admin/images/glass.png*/
+		 center center no-repeat;
+	border: 1px solid #ab6500;
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 40px;
+	width: 41px;
+	border-radius: 0 3px 3px 0;
+}
+
+.type_box {
+	background: #fff;
+	padding: 26px 33px;
+}
+
+.type_box ul li {
+	border: 1px solid #ebebeb;
+	margin-bottom: 16px;
+}
+
+.type_box ul li.licur {
+	border: 1px solid #FFA914;
+}
+
+.type_box ul li .pro img {
+	border-right: 1px solid #ebebeb;
+	float: left;
+}
+
+.pro_intro {
+	float: left;
+	padding: 23px 0 14px 16px;
+}
+
+.pro_intro h1 {
+	color: #707070;
+	font-size: 16px;
+	font-weight: normal;
+}
+
+.pro_intro p {
+	color: #ef3e42;
+	font-size: 16px;
+	margin-top: 26px;
+}
+
+.checkbox {
+	float: right;
+	background: url("checkbox.png")
+		/*tpa=http://act.lafumei.com/resource/system/admin/images/checkbox.png*/
+		 20px 45px no-repeat;
+	width: 100px;
+	height: 100px;
+}
+
+.checked {
+	float: right;
+	background: url("checked.png")
+		/*tpa=http://act.lafumei.com/resource/system/admin/images/checked.png*/
+		 20px 45px no-repeat;
+	width: 100px;
+	height: 100px;
+}
+
+.checkbox input {
+	display: none;
+	width: 100px;
+	height: 100px;
+}
+
+.btns {
+	height: 80px;
+	background: #f5f5f5;
+	padding: 30px 0 0 33px;
+}
+
+.btns a.add {
+	display: block;
+	float: left;
+	background: #ffa914;
+	color: #fff;
+	border: 1px solid #de7d12;
+	font-size: 16px;
+	width: 120px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	border-radius: 3px;
+	margin-right: 24px;
+}
+
+.btns a.cancel {
+	display: block;
+	float: left;
+	background: #b5b5b5;
+	width: 80px;
+	height: 40px;
+	line-height: 40px;
+	border: 1px solid #959595;
+	color: #fff;
+	font-size: 16px;
+	text-align: center;
+	border-radius: 3px;
+}
+
+/*户外购产品编辑*/
+.type_tit a.plus {
+	background: #ffa914;
+	width: 122px;
+	height: 30px;
+	line-height: 30px;
+	display: inline-block;
+	text-align: center;
+	color: #fff;
+	border-radius: 3px;
+	border: 1px solid #a77336;
+	margin-top: 6px;
+}
+
+.type_tit_left span {
+	margin-left: 18px;
+}
+
+.taocan input {
+	width: 400px;
+	height: 36px;
+	line-height: 36px;
+	border: 1px solid #dcdcdc;
+	box-shadow: inset 2px 0 8px rgba(6, 6, 6, 0.13);
+	color: #707070;
+	font-size: 16px;
+	text-indent: 21px;
+}
+
+.type_tit_left em {
+	font-weight: normal;
+	margin-left: 19px;
+	color: #707070;
+}
+
+.edit_ico {
+	display: inline;
+	float: right;
+	margin-right: 28px;
+	margin-top: 40px;
+	cursor: pointer;
+}
+
+.btns span {
+	font-size: 18px;
+	color: #434343;
+	float: left;
+	margin-right: 51px;
+}
+
+.btns em {
+	color: #ef3e42;
+}
+
+/*户外购商品详情*/
+.detail {
+	height: 60px;
+	background: #f5f5f5;
+}
+
+.detail h1 {
+	color: #707070;
+	font-size: 16px;
+	margin-left: 50px;
+	line-height: 60px;
+}
+
+.pro_detail {
+	background: #fff;
+	padding: 20px 28px 55px 40px;
+}
+
+.pro_detail img {
+	float: left;
+	margin-right: 75px;
+}
+
+.text {
+	float: left;
+}
+
+.text p {
+	color: #707070;
+	font-size: 18px;
+	line-height: 30px;
+}
+
+.text p span {
+	color: #ef3e42;
+}
+
+.color span {
+	float: left;
+	color: #707070;
+	font-size: 18px;
+	line-height: 30px;
+	margin-right: 3px;
+}
+
+.color ul {
+	float: left;
+}
+
+.color ul li {
+	display: block;
+	float: left;
+}
+
+.color ul li a {
+	display: block;
+	border: 1px solid #dcdcdc;
+	padding: 4px 15px;
+	color: #707070;
+	font-size: 16px;
+	margin-right: 18px;
+}
+
+.color ul li a.cur {
+	display: block;
+	border: 1px solid #DE7D12;
+	padding: 4px 15px;
+	color: #707070;
+	font-size: 16px;
+	margin-right: 18px;
+}
+
+.size span {
+	float: left;
+	color: #707070;
+	font-size: 18px;
+	line-height: 30px;
+	margin-right: 3px;
+}
+
+.size ul {
+	float: left;
+}
+
+.size ul li {
+	display: block;
+	float: left;
+}
+
+.size ul li a {
+	display: block;
+	border: 1px solid #dcdcdc;
+	padding: 4px 15px;
+	color: #707070;
+	font-size: 16px;
+	margin-right: 18px;
+}
+
+.size ul li a.cur {
+	display: block;
+	border: 1px solid #DE7D12;
+	padding: 4px 15px;
+	color: #707070;
+	font-size: 16px;
+	margin-right: 18px;
+}
+
+.sales {
+	margin-top: 26px;
+	margin-bottom: 16px;
+}
+
+.color {
+	margin-bottom: 20px;
+}
+
+.products_info {
+	margin-top: 45px;
+}
+
+.products_info h1 {
+	color: #de7d12;
+	font-size: 18px;
+	border-bottom: 1px solid #de7d12;
+	padding-bottom: 10px;
+	font-weight: normal;
+	margin-bottom: 20px;
+}
+
+.products_info p {
+	font-size: 14px;
+	color: #707070;
+	line-height: 24px;
+	text-indent: 2em;
+}
+
+/*领队设置*/
+.position a.delate {
+	width: 80px;
+	height: 30px;
+	line-height: 30px;
+	color: #fff;
+	background: #ef3e42;
+	display: block;
+	float: left;
+	border: 1px solid #b61f2d;
+	font-size: 16px;
+	text-align: center;
+	border-radius: 3px;
+	margin: 18px 36px 0 40px;
+}
+
+.position a.add {
+	width: 80px;
+	height: 30px;
+	line-height: 30px;
+	color: #fff;
+	background: #de7d12;
+	display: block;
+	float: left;
+	border: 1px solid #a77336;
+	font-size: 16px;
+	text-align: center;
+	border-radius: 3px;
+	margin: 18px 0 0 0;
+}
+
+.ld_set table tr th {
+	background: #f5f5f5;
+	height: 60px;
+	color: #707070;
+	font-size: 16px;
+}
+
+.ld_set table tr td {
+	background: #fff;
+	height: 160px;
+	text-align: center;
+	color: #707070;
+	font-size: 16px;
+	border-bottom: 1px solid #e7e7e7;
+	padding: 0 37px 0 39px;
+}
+
+.ld_set table tr td ul li {
+	display: block;
+	float: left;
+	margin-right: 11px;
+}
+
+.ld_set table tr td ul li h3 {
+	font-size: 12px;
+	color: #707070;
+	font-weight: normal;
+	margin-top: 5px;
+}
+
+.ld_set table tr td ul li p {
+	color: #ef3e42;
+	font-size: 12px;
+}
+
+.ld_set table tr td a.edit {
+	display: inline-block;
+	background: #de7d12;
+	border: 1px solid #ab6500;
+	font-size: 14px;
+	text-align: center;
+	width: 70px;
+	height: 30px;
+	line-height: 30px;
+	color: #fff;
+	border-radius: 3px;
+}
+
+.ld_set table tr td a.delate {
+	display: inline-block;
+	background: #de7d12;
+	border: 1px solid #ab6500;
+	font-size: 14px;
+	text-align: center;
+	width: 70px;
+	height: 30px;
+	line-height: 30px;
+	color: #fff;
+	border-radius: 3px;
+}
+
+/* 一号营修改 */
+.cl {
+	clear: left;
+}
+
+.cr {
+	clear: right;
+}
+/*contents*/
+.contents {
+	padding-left: 318px;
+	margin: 0 auto;
+}
+
+.wel {
+	width: 425px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.wel img {
+	margin: 104px 0 70px 0;
+}
+
+.enter {
+	width: 1018px;
+	margin: 0 auto;
+}
+
+.enterMenu {
+	width: 874px;
+	margin: 0 auto;
+}
+
+.enterMenu ul {
+	width: 934px;
+}
+
+.enterMenu ul li {
+	display: block;
+	float: left;
+	margin: 20px 50px 20px 0;
+}
+
+.enterMenu ul li a {
+	display: block;
+	width: 180px;
+	height: 46px;
+	line-height: 46px;
+	color: #fff;
+	font-size: 22px;
+	background: #ffa914;
+	text-align: center;
+	border: 1px solid #de7d12;
+	border-radius: 3px;
+}
+
+.enterMenu p {
+	text-align: center;
+	color: #de7d12;
+	font-size: 25px;
+	margin-top: 20px;
+	font-weight: bold
+}
+
+/************login*****************/
+.login {
+	width: 510px;
+	height: 530px;
+	background: rgb(255, 255, 255);
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -269px 0 0 -269px;
+	border: 1px solid #A6A1A1;
+	box-shadow: 2px 0 5px rgba(133, 114, 114, 0.1);
+	border-radius: 2.5rem;
+}
+
+.login_top {
+	height: 155px;
+	background: #b60927;
+	/** rgb(22, 20, 20);*/
+}
+
+.login_top img {
+	margin: 30px 0 0 25px;
+}
+
+.login form {
+	padding: 30px 70px 0 80px;
+}
+
+.username {
+	background: url("name_ico.png")
+		/*tpa=http://act.lafumei.com/resource/system/admin/images/name_ico.png*/
+		 24px center no-repeat;
+	margin-bottom: 22px;
+}
+
+.username input {
+	border: 1px solid #dcdcdc;
+	box-shadow: inset 0 2px 8px rgba(6, 6, 6, 0.1);
+	width: 350px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	border-radius: 5px;
+	font-size: 18px;
+}
+
+.password {
+	background: url("lock_ico.png")
+		/*tpa=http://act.lafumei.com/resource/system/admin/images/lock_ico.png*/
+		 24px center no-repeat;
+	margin-bottom: 22px;
+}
+
+.password input {
+	border: 1px solid #dcdcdc;
+	box-shadow: inset 0 2px 8px rgba(6, 6, 6, 0.1);
+	width: 350px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	border-radius: 5px;
+	font-size: 18px;
+}
+
+.erwm input {
+	width: 220px;
+	height: 50px;
+	line-height: 40px;
+	border: 1px solid #dcdcdc;
+	box-shadow: inset 0 2px 8px rgba(6, 6, 6, 0.1);
+	text-align: center;
+	border-radius: 5px;
+	font-size: 14px;
+}
+
+.erwm img {
+	margin: 10px 14px 0 13px;
+}
+
+.erwm a {
+	color: #219dd2;
+	text-decoration: underline;
+	font-size: 14px;
+}
+
+.loginBtn {
+	margin-top: 43px;
+	text-align: center;
+	background: url("border.png")
+		/*tpa=http://act.lafumei.com/resource/system/admin/images/border.png*/
+		 center center no-repeat;
+}
+
+.loginBtn a {
+	width: 180px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: #FBF7F7;
+	font-size: 23px;
+	background: #b60927; /**#FF8600*/
+	border: 1px solid #AFA495;
+	display: inline-block;
+	border-radius: 5px;
+	text-shadow: 0 0 2px rgba(6, 6, 6, 0.25);
+}
+
+/**********service*****************/
+.kf_list {
+	background: #e7e7e7;
+}
+
+.kf_contents {
+	margin: 0 auto;
+}
+
+.kf_box {
+	background: #f5f5f5;
+	border: 1px solid #dcdcdc;
+	box-shadow: 2px 0 5px rgba(6, 6, 6, 0.1);
+}
+
+.kf_tit {
+	line-height: 70px;
+	border-bottom: 1px solid #dcdcdc;
+	box-shadow: 2px 0 5px rgba(6, 6, 6, 0.1);
+}
+
+.kf_tit span {
+	font-size: 18px;
+	color: #535353;
+	font-weight: bold;
+	padding-left: 24px;
+	float: left;
+	margin-right: 20px;
+}
+
+#message_ul {
+	padding-left: 100px;
+	font-size: 0;
+}
+
+.kf_tit a {
+	font-size: 16px;
+	color: #de7d12;
+	display: inline-block;
+	padding: 0px 30px;
+	min-width: 110px;
+	text-align: center;
+}
+
+.kf_tit a.cur {
+	color: #fff;
+	background: #ffa914;
+	font-weight: bold;
+}
+
+.list_left {
+	width: 200px;
+	background: #e7e7e7;
+	float: left;
+}
+
+.list_left h1 {
+	color: #535353;
+	font-size: 18px;
+	font-weight: normal;
+	text-indent: 28px;
+	height: 50px;
+	line-height: 50px;
+}
+
+.list_left ul li {
+	display: block;
+}
+
+.list_left ul li a {
+	display: block;
+	height: 50px;
+	padding: 10px 0;
+}
+
+.list_left ul li a.cur {
+	background: #fff;
+	border-left: 2px solid #ffa914;
+}
+
+.list_left ul li a img {
+	float: left;
+	margin-right: 9px;
+}
+
+.list_left ul li a p {
+	color: #219dd2;
+	font-size: 14px;
+	line-height: 45px;
+	float: left;
+	width: 95px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.dian {
+	width: 26px;
+	height: 50px;
+	float: left;
+}
+
+.dian_cur {
+	background: url("dian.png")
+		/*tpa=http://act.lafumei.com/resource/system/admin/images/dian.png*/ 
+		8px 25px no-repeat;
+	width: 26px;
+	height: 50px;
+	float: left;
+}
+
+.list_right {
+	margin-left: 200px;
+	background: #f5f5f5;
+}
+
+.ask {
+	padding: 36px 20px 0px 17px;
+}
+
+.custom {
+	margin-bottom: 36px;
+	clear: right;
+}
+
+.custom img {
+	border-radius: 50%;
+	margin-right: 24px;
+	float: left;
+}
+
+.ask_text {
+	background: #7bd2e6;
+	padding: 20px;
+	border-radius: 5px;
+	width: 440px;
+	float: left;
+	margin-right: 16px;
+	font-size: 18px;
+}
+
+.ask_text img {
+	max-width: 100%;
+	border-radius: 0;
+}
+
+.kf {
+	float: left;
+}
+
+.fav {
+	float: left;
+	background: url("fav_cur.png")
+		/*tpa=http://act.lafumei.com/resource/system/admin/images/fav_cur.png*/
+		 left 20px no-repeat;
+	width: 19px;
+	height: 40px;
+}
+
+.fav_normal {
+	float: left;
+	background: url("fav.png")
+		/*tpa=http://act.lafumei.com/resource/system/admin/images/fav.png*/ 
+		left 20px no-repeat;
+	width: 19px;
+	height: 40px;
+}
+
+.question .box {
+	float: right;
+}
+
+.queText {
+	background: #fff;
+	padding: 20px;
+	margin-bottom: 36px;
+	border-radius: 5px;
+	width: 440px;
+	float: left;
+	margin-right: 16px;
+	border: 1px solid #e7e7e7;
+	font-size: 18px;
+	color: #707070;
+}
+
+.enterbox {
+	height: 200px;
+	padding-bottom: 180px;
+	margin-left: 20px;
+}
+
+.enterbox #content {
+	height: 140px;
+	margin-bottom: 20px;
+	border: 1px solid #e7e7e7;
+	background: #fff;
+	color: #707070;
+	font-size: 16px;
+	width: 80%;
+	float: left;
+	margin-right: 32px;
+	padding: 10px;
+}
+
+.enterbox a {
+	float: left;
+	display: block;
+	background: #ffa914;
+	border: 1px solid #de7d12;
+	border-radius: 3px;
+	color: #fff;
+	font-size: 16px;
+	width: 100px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+}
+
+/**********************************************************************************source*******************************************************************************************************************/
+.fileA {
+	position: relative;
+	width: 100px;
+	height: 36px;
+	line-height: 36px;
+	background: #fff;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	color: #fff;
+	font-size: 16px;
+	text-align: center;
+	text-shadow: 0 0 2px rgba(6, 6, 6, 0.18);
+}
+
+.fileA input {
+	opacity: 0;
+	width: 100px;
+	height: 36px;
+	position: absolute;
+	left: 0;
+}
+
+.operate {
+	display: inline-block;
+	background: #ffa914;
+	border: 1px solid #de7d12;
+	border-radius: 3px;
+	padding: 6px 18px;
+	color: #fff;
+	font-size: 16px;
+	text-align: center;
+	margin: 10px 0;
+}
+
+.operate:hover {
+	background: #febd27;
+}
+
+/**********************************************************************************list*******************************************************************************************************************/
+.list {
+	background: #f5f5f5;
+	border: 1px solid #dcdcdc;
+	box-shadow: 2px 0 5px rgba(6, 6, 6, 0.1);
+}
+
+.list_tit {
+	height: 70px;
+	background: #f5f5f5;
+}
+
+.list_tit ul {
+	margin-left: 20px;
+}
+
+.list_tit ul li {
+	color: #ffa914;
+	font-size: 16px;
+	display: block;
+	float: left;
+	line-height: 70px;
+	padding: 0 28px;
+	cursor: pointer;
+}
+
+.list_tit ul li.curLi {
+	background: #fff;
+	font-weight: bold;
+}
+
+.contion {
+	background: #fff;
+	height: 55px;
+	padding-top: 15px;
+	border-bottom: 1px solid #cfcfcf;
+}
+
+.Btns {
+	float: left;
+	margin-right: 40px;
+	margin-top: 10px;
+}
+
+.Btns a {
+	margin: 0 28px;
+}
+
+.contion_right {
+	float: left;
+}
+
+.contion_right span {
+	color: #434343;
+	font-size: 16px;
+}
+
+.contion_right input {
+	width: 182px;
+	padding-left: 8px;
+	height: 33px;
+	line-height: 33px;
+	border-radius: 3px;
+	border: 1px solid #dcdcdc;
+	box-shadow: inset 2px 0 8px rgba(6, 6, 6, 0.18);
+	color: #434343;
+	font-size: 16px;
+	margin-right: 20px;
+}
+
+.list table {
+	color: #707070;
+	font-size: 16px;
+	background: #fff;
+}
+
+.list table tr th {
+	height: 60px;
+	background: #f5f5f5;
+}
+
+.list table tr td {
+	height: 60px;
+	text-align: center;
+}
+
+.check {
+	background: url("check.png")
+		/*tpa=http://act.lafumei.com/resource/system/admin/images/check.png*/
+		 left center no-repeat;
+	width: 17px;
+	height: 17px;
+	margin: 0 auto;
+}
+
+.check_cur {
+	background: url("checked.png")
+		/*tpa=http://act.lafumei.com/resource/system/admin/images/checked.png*/
+		 left center no-repeat;
+	width: 17px;
+	height: 17px;
+	margin: 0 auto;
+}
+
+.check input {
+	opacity: 0;
+}
+
+/**********************************************************************************userMessage*******************************************************************************************************************/
+.fans {
+	height: 80px;
+	background: #fff;
+	padding-left: 30px;
+	padding-top: 30px;
+}
+
+.fans span {
+	color: #de7d12;
+	font-size: 16px;
+	margin-left: 22px;
+	line-height: 22px;
+	line-height: 50px;
+}
+
+.message {
+	border-top: 1px solid #cfcfcf;
+	border-bottom: 1px solid #cfcfcf;
+	padding: 30px 0 32px 30px;
+	background: #fff;
+}
+
+.message table tr td {
+	text-align: left;
+	height: 15px;
+}
+
+.message table tr td.orange {
+	color: #de7d12;
+}
+
+.boxLeft {
+	float: left;
+	margin-right: 10px;
+}
+
+.sure {
+	margin-top: 23px;
+	float: left;
+}
+
+.address {
+	padding: 30px 34px 6px;
+}
+
+.address h1 {
+	color: #434343;
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+
+.address table tr th {
+	background: #e9e9e9;
+}
+
+/**商品管理**/
+.pList {
+	margin-left: 0px;
+}
+
+.pList li {
+	width: 140px;
+	float: left;
+	text-align: center;
+	height: 260px;
+}
+
+.pList li p {
+	margin-top: 5px;
+	color: #666;
+	font-size: 12px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 110px;
+}
+
+.pList li a {
+	color: #333;
+}
+
+.pList li .delateBtn {
+	margin-top: 10px;
+}
+
+.groupPro {
+	float: left;
+	text-align: center;
+	padding: 0 5px 10px;
+}
+/*商品管理-优惠组合-新建/修改-选择商品*/
+.type {
+	font-size: 16px;
+	margin-left: 20px;
+	margin-top: 12px;
+}
+
+.type span {
+	float: left;
+	line-height: 30px;
+	margin-right: 10px;
+}
+
+.type a {
+	background: #fff;
+	border: 1px solid #e6e6e6;
+	display: block;
+	font-size: 16px;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 10px;
+	text-align: center;
+	float: left;
+	margin-right: 10px;
+	color: #6d6d6d;
+	margin-bottom: 10px;
+}
+
+.table_td {
+	border-top: 1px solid #eee;
+	border-left: 1px solid #eee;
+	margin-top: 20px;
+}
+
+.table_td td {
+	border-bottom: 1px solid #eee;
+	padding-top: 10px;
+	font-size: 14px;
+	line-height: 40px;
+	text-align: center;
+}
+
+.contion_right02 {
+	color: #434343;
+	font-size: 16px;
+	margin-left: 20px;
+}
+
+.contion_right02 input {
+	border: 1px solid #dcdcdc;
+	border-radius: 3px;
+	box-shadow: 2px 0 8px rgba(6, 6, 6, 0.18) inset;
+	color: #434343;
+	font-size: 16px;
+	height: 33px;
+	line-height: 33px;
+	margin-right: 20px;
+	padding-left: 8px;
+	width: 182px;
+}
+
+.type a:hover {
+	background: #de7d12;
+	color: #fff;
+}
+
+.table_td td a {
+	color: #666;
+}
+/*领队内容管理*/
+.selectstyle {
+	border: 1px solid #dcdcdc;
+	border-radius: 3px;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2) inset;
+	color: #434343;
+	height: 33px;
+	line-height: normal;
+	font-size: 14px;
+	margin-right: 20px;
+	padding-left: 4px;
+}
+
+#operationMenu {
+	list-style: none;
+	margin: 0px;
+}
+
+#operationMenu li {
+	float: left;
+	margin-right: 5px;
+}
+
+/*灰色头像*/
+.gray {
+	-webkit-filter: grayscale(100%);
+	-moz-filter: grayscale(100%);
+	-ms-filter: grayscale(100%);
+	-o-filter: grayscale(100%);
+	filter: grayscale(100%);
+	filter: url("gray.svg#grayscale")
+		/*tpa=http://act.lafumei.com/resource/system/admin/images/gray.svg#grayscale*/;
+	filter: gray;
+}
+
+.kf_contents .handle {
+	padding: 10px 20px;
+	font-size: 0;
+}
+
+.kf_contents .handle a {
+	display: inline-block;
+	font-size: 14px;
+	vertical-align: top;
+	height: 25px;
+	line-height: 25px;
+	margin-right: 15px;
+}
+
+.kf_contents .handle .countBtn, .kf_contents .handle .faceBtn {
+	width: 25px;
+	height: 25px;
+}
+
+.kf_contents .handle .countBtn img, .kf_contents .handle .faceBtn img {
+	width: 100%;
+}
+
+.kf_contents .handle .musicBtn {
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	background: url("music.png")
+		/*tpa=http://act.lafumei.com/resource/system/admin/images/music.png*/
+		 no-repeat center center;
+	background-size: 25px auto;
+}
+
+.kf_contents .handle .musicBtn.close {
+	background: url("musicStop.png")
+		/*tpa=http://act.lafumei.com/resource/system/admin/images/musicStop.png*/
+		 no-repeat;
+	background-size: 25px auto;
+}
+
+.kf_contents .handle .busyBtn {
+	background: url("busy.png")
+		/*tpa=http://act.lafumei.com/resource/system/admin/images/busy.png*/ 
+		no-repeat left 0;
+	padding-left: 30px;
+	color: red;
+}
+
+#showUsersInfo li {
+	position: relative;
+}
+
+#showUsersInfo li .busy {
+	width: 25px;
+	height: 30px;
+	background: url("busy.png")
+		/*tpa=http://act.lafumei.com/resource/system/admin/images/busy.png*/ 
+		no-repeat center center;
+	background-size: 15px auto;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	margin-top: -15px;
+	cursor: pointer;
+}
+
+.popImg {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, .8);
+	display: none;
+}
+
+.popImg table {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+.popImg img {
+	max-height: 100%;
+}
+
+.popImg .close {
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	cursor: pointer;
+	background: url("close.png")
+		/*tpa=http://act.lafumei.com/resource/system/admin/images/close.png*/
+		 no-repeat;
+}
+
+.combo>span {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.combo .combo-text {
+	vertical-align: top !important;
+}
+
+.fullScreenImg {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: url("blackBg.png")
+		/*tpa=http://act.lafumei.com/resource/system/admin/images/blackBg.png*/
+		 repeat;
+	z-index: 9;
+	display: none;
+}
+
+.fullScreenImg table {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	background: url("loading.png")
+		/*tpa=http://act.lafumei.com/resource/system/admin/images/loading.png*/
+		 no-repeat center center;
+}
+
+.fullScreenImg img {
+	height: 100%;
+	max-height: 100%;
+}
+
+.fullScreenImg .close {
+	display: block;
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background: url("close.png")
+		/*tpa=http://act.lafumei.com/resource/system/admin/images/close.png*/
+		 no-repeat center center;
+	cursor: pointer;
+}
+
+table.theTable tbody tr td {
+	text-align: center;
+}
+
+/**alert 重写*/
+.dialog-outer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0);
+	z-index: 1000;
+}
+
+.dialog-alert {
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	width: 20rem;
+	margin-left: -5rem;
+	background: #fff;
+	border-radius: .5rem;
+	border: 1px solid rgba(0, 0, 0, 0.22);
+}
+
+.dialog.fingerprint {
+	width: 14rem;
+	margin-left: -7rem;
+}
+
+.dialog-alert .title {
+	text-align: center;
+	line-height: 2rem;
+	font-size: .9rem;
+}
+
+.dialog-alert .content {
+	font-size: .6rem;
+	line-height: 2rem;
+}
+
+.dialog-alert .pre-content {
+	color: red;
+	font-weight: bold;
+	font-size: 1.3rem;
+}
+
+.dialog-alert .mid-content {
+	color: black;
+	font-size: 1.1rem;
+}
+
+.dialog-alert.fingerprint .content {
+	padding: 1rem;
+}
+
+.dialog-alert .btn {
+	background: #fff;
+	font-size: .7rem;
+	color: #0057af;
+	display: inline-block;
+	width: 100%;
+	border-bottom-left-radius: .5rem;
+	border-bottom-right-radius: .5rem;
+	border: 0;
+	height: 2.5rem;
+	border-top: 1px solid #aaa;
+}
+
+.dialog-alert.fingerprint .btn-confirm {
+	color: #ffb637;
+	background-color: #b60927;
+	font-weight: bold;
+	font-size: 1.1rem;
+}
+
+/**进度条*/
+.progressPop {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9;
+	background: rgba(0, 0, 0, 0.1);
+	display: none;
+}
+
+.progressPop .box {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -20px 0 0 -100px;
+	text-align: center;
+	color: red;
+}
+
+.progressPop .progress {
+	width: 250px;
+	height: 25px;
+	background: #fff;
+	border-radius: 5px;
+	overflow: hidden;
+	margin-bottom: 5px;
+}
+
+.progressPop .progress span {
+	height: 100%;
+	width: 0%;
+	display: block;
+	background: #00962e;
+}

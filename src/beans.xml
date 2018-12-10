@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+	<bean name="userDao" class="com.igeekhome.dao.impl.UserDAOImpl"/>
+	<bean name="logDao" class="com.igeekhome.dao.impl.LogDAOImpl"/>
+	<bean name="roleDao" class="com.igeekhome.dao.impl.RoleDAOImpl"/>
+	
+	<bean name="ouserDao" class="com.igeekhome.dao.imploracle.UserDAOImpl"/>
+	
+	<bean name="userService" class="com.igeekhome.service.impl.UserServiceImpl">
+		<property name="userDAO" ref="userDao"/>
+	</bean>
+	<bean name="roleService" class="com.igeekhome.service.impl.RoleServiceImpl">
+		<property name="roleDAO" ref="roleDao"/>
+	</bean>
+	<bean name="logService" class="com.igeekhome.service.impl.LogServiceImpl">
+		<property name="logDAO" ref="logDao"/>
+	</bean>
+</beans>

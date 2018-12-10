@@ -1,0 +1,231 @@
+@CHARSET "UTF-8";
+
+body {
+	
+}
+
+
+
+
+#header {
+	position: relative;
+	width: 100%;
+	background: #b60927;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+	height: 120px;
+	overflow: hidden;
+}
+
+/*leader*/
+.user_leader {
+	float: right;
+	margin-top: 38px;
+}
+
+.user_leader li {
+	display: block;
+	float: left;
+}
+
+.user_leader li a {
+	display: block;
+	width: 100px;
+	padding-left: 25px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 16px;
+	margin-right: 24px;
+	border-radius: 3px;
+	border: 1px solid #a10c26;
+	color: #fff;
+	height: 40px;
+}
+
+.user_leader li a.usename {
+	border: none;
+	background: url("user.png")
+		
+
+		  
+		 left center no-repeat;
+	margin-right: 100px;
+}
+
+.user_leader li a.edit {
+	background: #b60927 url("Padlock_Open.png")
+	
+
+		
+		
+		
+		
+		
+		
+		 16px center no-repeat;
+}
+
+.user_leader li a.exit {
+	background: #b60927 url("Power.png")
+	
+
+		 26px center no-repeat;
+}
+
+.BtnA {
+	margin-top: 30px;
+	display: inline-block;
+	box-shadow: 0 1px 1px rgba(255, 255, 255, 0.5) inset;
+	border-radius: 0.5em;
+	border: 1px solid #ab6500;
+	color: #fff;
+	font-size: 16px;
+	padding: 0.4em 25px;
+	text-align: center;
+	overflow: hidden;
+	background: #de7d12;
+}
+
+.BtnB {
+	margin-top: 30px;
+	display: inline-block;
+	border-radius: 0.5em;
+	border: 1px solid #ab6500;
+	color: #fff;
+	font-size: 16px;
+	padding: 0.4em 25px;
+	text-align: center;
+	overflow: hidden;
+	background: #de7d12;
+}
+
+div {
+	margin-left: auto;
+	margin-right: auto
+}
+
+.login {
+	border: 1px solid red;
+	width: 510px;
+	height: 540px;
+	margin-top: 105px;
+	border-radius: 35px;
+}
+
+.top {
+	width: 100%;
+	height: 158px;
+	border: 0px solid blue;
+	border-radius: 35px 35px 0 0;
+	background: url(../images/) no-repeat #b60927 20px center;
+}
+
+#icon_user_position {
+	margin-left: 120px;
+}
+
+#icon_pass_position {
+	margin-left: 120px;
+}
+
+#usercode_position {
+	margin-left: 120px;
+}
+
+#username {
+	height: 60px;
+	width: 300px;
+	text-align: center;
+	border-radius: 6px
+}
+
+#erroMessage {
+	height: 20px;
+	margin-top: 5px;
+	border: 0px solid red;
+	text-align: center;
+	color: red;
+	font-family: 黑体
+}
+
+#errorMessage2 {
+	height: 20px;
+	margin-top: 5px;
+	border: 0px solid red;
+	text-align: center;
+	color: red;
+	font-family: 黑体
+}
+
+
+#checkbox_remmber_pass {
+	text-align: center;
+	margin-left: -35px;
+	margin-top: 15px
+}
+
+#register {
+	margin-top: -45px;
+	text-align: center
+}
+
+#icon_user {
+	font-size: 40px;
+	margin-left: -50px;
+	margin-top: 10px;
+	float: left
+}
+
+#icon_pass {
+	font-size: 40px;
+	margin-top: 30px;
+	margin-left: -50px;
+	float: left
+}
+
+#userpass {
+	height: 60px;
+	width: 300px;
+	text-align: center;
+	border-radius: 6px;
+	margin-top: 20px
+}
+
+#checkcode {
+	margin-left: 80px
+}
+
+#usercode {
+	height: 55px;
+	width: 170px;
+	text-align: center;
+	border-radius: 6px;
+	margin-top: 20px
+}
+
+.codepicture {
+	height: 55px;
+	width: 110px;
+	margin-left: 20px;
+	margin-top: 20px;
+	
+
+
+	
+}
+
+#btnlogin {
+	font-size: 1.8em;
+	font-family: 黑体;
+	width: 150px;
+	height: 50px;
+	margin-left: 4px;
+	margin-top: 40px;
+	background: #b60927;
+}
+
+#memu {
+	border: 1px soild #eee;
+	height: 60px;
+	width: 200px
+}

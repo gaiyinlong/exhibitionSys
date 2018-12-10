@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">	<!-- 和MVC无关的配置 -->
+	<!-- 配置扫描的包 -->
+    <context:component-scan base-package="com.igeekhome.exhibition"/>
+	
+	
+	
+	<!-- 配置dataSource(数据源) 连接池   链接数据库的相关配置 -->
+	<bean id="myDataSource" class="com.alibaba.druid.pool.DruidDataSource"
+		destroy-method="close" init-method="init">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/exhibition?useUnicode=true&amp;characterEncoding=utf-8" />
+		<property name="username" value="root" />
+		<property name="password" value="root" />
+		
+		<property name="filters" value="stat" />
+		<property name="maxActive" value="20" />
+		<property name="initialSize" value="3" />
+	</bean>
+	<!-- sessionFactory -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="myDataSource"/>
+        <!-- 让spring自动检索实体类 -->
+       	<property name="packagesToScan" value="com.igeekhome.exhibition.pojo"/>
+        <!-- 
+        <property name="mappingResources">
+            <list>
+                <value>com.igeekhome.pojo.ClassInfo</value>
+                <value>com.igeekhome.pojo.Student</value>
+                <value>com.igeekhome.pojo.CourseInfo</value>
+                <value>com.igeekhome.pojo.StudentDetail</value>
+            </list>
+        </property>
+         -->
+        <property name="hibernateProperties">
+            <props>
+            	<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+            	<prop key="hibernate.show_sql">true</prop>
+            	<prop key="hibernate.hbm2ddl.auto">update</prop>
+            </props>
+        </property>
+    </bean>
+    
+    
+    
+    
+    <!-- 申明式事务 -->
+	<!-- 事务管理器 -->
+	<bean id="transcationManager"
+		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- 事务的传播特征 -->
+	<tx:advice id="tranAdvice" transaction-manager="transcationManager">
+		<tx:attributes>
+			<tx:method name="delete*" propagation="REQUIRED" read-only="false"
+				rollback-for="java.lang.Exception" />
+			<tx:method name="save*" propagation="REQUIRED" read-only="false"
+				rollback-for="java.lang.Exception" />
+			<tx:method name="insert*" propagation="REQUIRED" read-only="false"
+				rollback-for="java.lang.Exception" />
+			<tx:method name="update*" propagation="REQUIRED" read-only="false"
+				rollback-for="java.lang.Exception" />
+			<tx:method name="load*" propagation="SUPPORTS" read-only="true" />
+			<tx:method name="find*" propagation="SUPPORTS" read-only="true" />
+			<tx:method name="search*" propagation="SUPPORTS" read-only="true" />
+			<tx:method name="select*" propagation="SUPPORTS" read-only="true" />
+			<tx:method name="get*" propagation="SUPPORTS" read-only="true" />
+		</tx:attributes>
+	</tx:advice>
+
+	<!-- 通过AOP切入事务 -->
+	<aop:config>
+		<aop:pointcut expression="execution(* com.igeekhome.exhibition.service.*.*(..))"
+			id="allServiceMethod" />
+		<aop:advisor advice-ref="tranAdvice" pointcut-ref="allServiceMethod" />
+	</aop:config>
+	
+	<tx:annotation-driven/>
+	
+</beans>
